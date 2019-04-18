@@ -9,6 +9,7 @@ import getVisibleExpenses from './selectors/expenses';
 import App from './App';
 import './index.css';
 import "bootstrap/dist/css/bootstrap.css";
+import "react-dates/lib/css/_datepicker.css";
 import * as serviceWorker from './serviceWorker';
 
 
@@ -45,9 +46,7 @@ store.dispatch(addExpense(newExp3));
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
-
 console.log(visibleExpenses);
-
 
 
 ReactDOM.render(<Provider store={store}>

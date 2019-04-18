@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render list of expenses 1`] = `
+<Fragment>
+  <div
+    key="1"
+  >
+    <Link
+      to="/edit/1"
+    >
+      <h3>
+        Gum
+      </h3>
+    </Link>
+    <ul>
+      <li>
+        195
+      </li>
+      <li>
+        0
+      </li>
+    </ul>
+  </div>
+  <div
+    key="2"
+  >
+    <Link
+      to="/edit/2"
+    >
+      <h3>
+        Rent
+      </h3>
+    </Link>
+    <ul>
+      <li>
+        109500
+      </li>
+      <li>
+        -345600000
+      </li>
+    </ul>
+  </div>
+  <div
+    key="3"
+  >
+    <Link
+      to="/edit/3"
+    >
+      <h3>
+        Credit Card
+      </h3>
+    </Link>
+    <ul>
+      <li>
+        4500
+      </li>
+      <li>
+        345600000
+      </li>
+    </ul>
+  </div>
+</Fragment>
+`;

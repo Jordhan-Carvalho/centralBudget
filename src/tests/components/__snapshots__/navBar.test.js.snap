@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NavBar correctly 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light bg-light"
+>
+  <Link
+    className="navbar-brand"
+    to="/"
+  >
+    Central Budget
+  </Link>
+  <button
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    className="navbar-toggler"
+    data-target="#navbarNavAltMarkup"
+    data-toggle="collapse"
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    className="collapse navbar-collapse"
+    id="navbarNavAltMarkup"
+  >
+    <div
+      className="navbar-nav"
+    >
+      <NavLink
+        className="nav-item nav-link"
+        to="/movies"
+      >
+        Movies
+      </NavLink>
+      <NavLink
+        className="nav-item nav-link"
+        to="/customers"
+      >
+        Customers
+      </NavLink>
+      <NavLink
+        className="nav-item nav-link"
+        to="/help"
+      >
+        Help
+      </NavLink>
+      <NavLink
+        className="nav-item nav-link"
+        to="/login"
+      >
+        Login
+      </NavLink>
+      <NavLink
+        className="nav-item nav-link"
+        to="/register"
+      >
+        Register
+      </NavLink>
+    </div>
+  </div>
+</nav>
+`;

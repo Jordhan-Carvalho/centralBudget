@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the dashboard page 1`] = `
+<Fragment>
+  <h1>
+    Hello
+  </h1>
+  <ConnectFunction />
+  <ConnectFunction />
+  <Link
+    to="/create"
+  >
+    Add expense
+  </Link>
+  <Link
+    to="edit"
+  >
+    edit expense
+  </Link>
+</Fragment>
+`;
