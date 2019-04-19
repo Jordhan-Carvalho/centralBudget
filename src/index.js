@@ -13,38 +13,7 @@ import "react-dates/lib/css/_datepicker.css";
 import * as serviceWorker from './serviceWorker';
 
 
-
 const store = configStore();
-
-const newExp = {
-  description: 'Water bll',
-  note: 'wat',
-  amount: 564500,
-  createdAt: 1
-};
-
-const newExp2 = {
-  ...newExp,
-  description: 'Gas bill',
-  amount: 400,
-  createdAt: 100
-};
-
-const newExp3 = {
-  ...newExp,
-  description: 'Rent',
-  amount: 500,
-  createdAt: 200
-};
-
-store.dispatch(addExpense(newExp));
-store.dispatch(addExpense(newExp2));
-store.dispatch(addExpense(newExp3));
-
-
-
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
 
 
