@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ExpenseForm from "./expenseForm";
-import { addExpense } from "../actions/expenses";
+import { startAddExpense } from "../actions/expenses";
 
 export class AddExpensePage extends Component {
   onSubmit = expense => {
-    this.props.addExpense(expense);
+    this.props.startAddExpense(expense);
     this.props.history.push("/");
   };
 
@@ -22,7 +22,7 @@ export class AddExpensePage extends Component {
 // to simplify props.dispatch(addExpense(expense)) to props.onSubmit(expense)
 const mapDispatchToProps = dispatch => {
   return {
-    addExpense: expense => dispatch(addExpense(expense))
+    startAddExpense: expense => dispatch(startAddExpense(expense))
   };
 };
 

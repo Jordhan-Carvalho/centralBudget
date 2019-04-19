@@ -8,6 +8,7 @@ import './index.css';
 import "bootstrap/dist/css/bootstrap.css";
 import "react-dates/lib/css/_datepicker.css";
 import * as serviceWorker from './serviceWorker';
+import './firebase/firebase';
 
 
 const store = configStore();
