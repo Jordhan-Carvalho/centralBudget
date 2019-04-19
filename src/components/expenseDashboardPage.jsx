@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ExpenseList from "./expenseList";
 import ExpenseListFilters from "./expenseListFilters";
+import ExpenseSumary from "./expenseSumary";
 
 class ExpenseDashboardPage extends Component {
   state = {};
@@ -9,6 +10,7 @@ class ExpenseDashboardPage extends Component {
     return (
       <React.Fragment>
         <h1>Hello</h1>
+        <ExpenseSumary />
         <ExpenseListFilters />
         <ExpenseList />
         <Link to="/create">Add expense</Link>
