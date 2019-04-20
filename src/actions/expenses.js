@@ -6,8 +6,9 @@ export const addExpense = (expense) => ({
     expense
   });
 
-    // only works bc redux middleware (redux thunk)
+    
   export const startAddExpense = (expenseData = {}) => {
+    // only works bc redux middleware (redux thunk)
     return (dispatch) => {
       const {
         description = '',
@@ -16,12 +17,12 @@ export const addExpense = (expense) => ({
         createdAt = 0
       } = expenseData;
       const expense = {description, note, amount, createdAt};
-      //save the data to firebase (aynsc call)
-        db.ref('expenses').push(expense).then((ref) => {
+      //save the data to firebase (aynsc call) (used the return to testing porpouse)
+        return db.ref('expenses').push(expense).then((ref) => {
           dispatch(addExpense({
             id: ref.key,
             ...expense
-          }))
+          }));
         });
     };
   };

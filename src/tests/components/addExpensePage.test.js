@@ -4,11 +4,11 @@ import { AddExpensePage } from '../../components/addExpensePage';
 import expenses from '../fixtures/expenses';
 
 // using lifecycle methods (global) refactoring
-let addExpense, history, wrapper;
+let startAddExpense, history, wrapper;
 beforeEach(() => {
-    addExpense = jest.fn();
+    startAddExpense = jest.fn();
     history = { push: jest.fn() };
-    wrapper = shallow(<AddExpensePage addExpense={addExpense} history={history} />);
+    wrapper = shallow(<AddExpensePage startAddExpense={startAddExpense} history={history} />);
 });
 //
 
@@ -21,5 +21,5 @@ test('should handle onSubmit', () => {
     wrapper.find('ExpenseForm').prop('onSubmit')(expenses[0]);
     //check if spies (mock fn) are ij
     expect(history.push).toHaveBeenLastCalledWith('/');
-    expect(addExpense).toHaveBeenLastCalledWith(expenses[0]);
+    expect(startAddExpense).toHaveBeenLastCalledWith(expenses[0]);
 });

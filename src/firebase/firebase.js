@@ -3,13 +3,14 @@ import 'firebase/database';
 
 
 const config = {
-    apiKey: "AIzaSyB40jX9UqifuLjp8dHV587s6Yf5OxzndTw",
-    authDomain: "centralbudget-8bbff.firebaseapp.com",
-    databaseURL: "https://centralbudget-8bbff.firebaseio.com",
-    projectId: "centralbudget-8bbff",
-    storageBucket: "centralbudget-8bbff.appspot.com",
-    messagingSenderId: "889823716507"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID
   };
+
 
 firebase.initializeApp(config);
 
