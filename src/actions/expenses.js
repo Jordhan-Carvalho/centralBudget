@@ -9,7 +9,7 @@ export const addExpense = (expense) => ({
     
   export const startAddExpense = (expenseData = {}) => {
     // only works bc redux middleware (redux thunk)
-    return (dispatch) => {
+    return async (dispatch) => {
       const {
         description = '',
         note = '',
@@ -18,12 +18,11 @@ export const addExpense = (expense) => ({
       } = expenseData;
       const expense = {description, note, amount, createdAt};
       //save the data to firebase (aynsc call) (used the return to testing porpouse)
-        return db.ref('expenses').push(expense).then((ref) => {
-          dispatch(addExpense({
-            id: ref.key,
-            ...expense
-          }));
-        });
+        const ref = await db.ref('expenses').push(expense);
+      dispatch(addExpense({
+        id: ref.key,
+        ...expense
+      }));
     };
   };
   
@@ -39,3 +38,28 @@ export const addExpense = (expense) => ({
     id,
     updates
   });
+
+  // SET_EXPENSES
+  export const setExpenses = (expenses) => ({
+    type: 'SET_EXPENSES',
+    expenses
+  });
+
+  // export const startSetExpenses
+  export const startSetExpenses = () => {
+    return async (dispatch) => {
+  // 1. fetch all expense data once
+  //2. Parse the data to array
+  const expenses = []; 
+  await db.ref('expenses').once('value', (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+                expenses.push({
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
+                });
+            });
+        });
+        // 3. dispatch SET_EXPENSES
+        dispatch(setExpenses(expenses));
+      };
+      };
