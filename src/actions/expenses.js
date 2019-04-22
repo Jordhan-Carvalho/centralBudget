@@ -51,6 +51,17 @@ export const addExpense = (expense) => ({
     updates
   });
 
+  export const startEditExpense = (id, updates) => {
+    return async (dispatch) => {
+      try{
+        await db.ref(`expenses/${id}`).update(updates);
+        dispatch(editExpense(id, updates));
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  };
+
   // SET_EXPENSES
   export const setExpenses = (expenses) => ({
     type: 'SET_EXPENSES',
