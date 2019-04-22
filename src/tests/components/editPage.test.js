@@ -4,12 +4,12 @@ import { EditPage } from '../../components/editPage';
 import expenses from '../fixtures/expenses';
 
 // using lifecycle methods (global) refactoring
-let editExpense, history, wrapper, removeExpense;
+let editExpense, history, wrapper, startRemoveExpense;
 beforeEach(() => {
-    removeExpense = jest.fn();
+    startRemoveExpense = jest.fn();
     editExpense = jest.fn();
     history = { push: jest.fn() };
-    wrapper = shallow(<EditPage editExpense={editExpense} removeExpense={removeExpense} history={history} expense={expenses[0]}/>);
+    wrapper = shallow(<EditPage editExpense={editExpense} startRemoveExpense={startRemoveExpense} history={history} expense={expenses[0]}/>);
 });
 //
 
@@ -24,8 +24,8 @@ test('should handle editExpense', () => {
     expect(editExpense).toHaveBeenLastCalledWith(expenses[0].id, expenses[0]);
 });
 
-test('should handle removeExpense', () => {
+test('should handle startRemoveExpense', () => {
     wrapper.find('button').simulate('click');
     expect(history.push).toHaveBeenLastCalledWith('/');
-    expect(removeExpense).toHaveBeenLastCalledWith(expenses[0]);
+    expect(startRemoveExpense).toHaveBeenLastCalledWith(expenses[0]);
 })
