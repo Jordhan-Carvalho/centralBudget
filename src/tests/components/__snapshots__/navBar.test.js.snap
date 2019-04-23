@@ -48,18 +48,12 @@ exports[`should render NavBar correctly 1`] = `
       >
         Help
       </NavLink>
-      <NavLink
+      <span
         className="nav-item nav-link"
-        to="/login"
+        onClick={[Function]}
       >
-        Login
-      </NavLink>
-      <NavLink
-        className="nav-item nav-link"
-        to="/register"
-      >
-        Register
-      </NavLink>
+        Logout
+      </span>
     </div>
   </div>
 </nav>

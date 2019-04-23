@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { startLogout } from "../actions/auth";
 
-const NavBar = ({ user }) => {
+export const NavBar = ({ startLogout, user }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
@@ -31,12 +33,9 @@ const NavBar = ({ user }) => {
           </NavLink>
           {!user ? (
             <React.Fragment>
-              <NavLink className="nav-item nav-link" to="/login">
-                Login
-              </NavLink>
-              <NavLink className="nav-item nav-link" to="/register">
-                Register
-              </NavLink>
+              <span className="nav-item nav-link" onClick={startLogout}>
+                Logout
+              </span>
             </React.Fragment>
           ) : (
             <React.Fragment>
@@ -54,4 +53,12 @@ const NavBar = ({ user }) => {
   );
 };
 
-export default NavBar;
+// redux
+const mapDispatchToProps = dispatch => ({
+  startLogout: () => dispatch(startLogout())
+});
+
+export default connect(
+  undefined,
+  mapDispatchToProps
+)(NavBar);

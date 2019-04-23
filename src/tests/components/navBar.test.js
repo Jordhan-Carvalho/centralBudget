@@ -1,12 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import NavBar from '../../components/navBar';
+import { NavBar } from '../../components/navBar';
 
 test('should render NavBar correctly', () => {
-    const wrapper = shallow(<NavBar />);
+    const wrapper = shallow(<NavBar startLogout={() => {}}/>);
     expect(wrapper).toMatchSnapshot();
-    // expect(wrapper.find('button')).toBe(1);
-    // const renderer = new ShallowRenderer();
-    // renderer.render(<NavBar />);
-    // expect(renderer.getRenderOutput()).toMatchSnapshot();
+
+});
+
+test('should call startLogout on button click', () => {
+    const startLogout = jest.fn();
+    const wrapper = shallow(<NavBar startLogout={startLogout}/>);
+    wrapper.find('span').at(1).simulate('click');
+    expect(startLogout).toHaveBeenCalled();
 });
