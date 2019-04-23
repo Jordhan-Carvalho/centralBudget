@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <main className="container">
+        <main className="container-fluid">
           <Switch>
             <PublicRoute path='/' exact component={LoginPage}/>
           <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />

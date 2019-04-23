@@ -5,8 +5,15 @@ import { startLogin } from "../actions/auth";
 export class LoginPage extends Component {
   render() {
     return (
-      <div>
-        <button onClick={this.props.startLogin}> Loggin </button>
+      <div className="box-layout">
+        <div className="box-layout__box">
+          <h1 className="box-layout__title">Central Budget</h1>
+          <p>It's time to get your expenses under control</p>
+          <button className="btn btn-dark" onClick={this.props.startLogin}>
+            {" "}
+            Login{" "}
+          </button>
+        </div>
       </div>
     );
   }

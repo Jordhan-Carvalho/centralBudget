@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import configStore from './store/configStore';
 import { startSetExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
+import LoadingPage from './components/loadingPage';
 import App from './App';
 import './index.css';
 import "bootstrap/dist/css/bootstrap.css";
@@ -30,7 +31,7 @@ const renderApp = () => {
   }
 }
 
-ReactDOM.render(<p>Loading...</p>  , document.getElementById('root'));
+ReactDOM.render(<LoadingPage />  , document.getElementById('root'));
 
 
 

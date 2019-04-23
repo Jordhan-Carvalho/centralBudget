@@ -35,3 +35,42 @@
 .nav-link {
   cursor: pointer;
 }
+
+/* login page css */
+.box-layout {
+  align-items: center;
+  background: url("/images/bg.jpg");
+  background-size: cover;
+  margin-left: -15px;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.box-layout__box {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  text-align: center;
+  padding: 3.2rem 1.6rem;
+  width: 25rem;
+}
+
+.box-layout__title {
+  margin: 0 0 1.6rem 0;
+  line-height: 1;
+}
+
+/* loading */
+.loader {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.loader__image {
+  height: 6rem;
+  width: 6rem;
+}
