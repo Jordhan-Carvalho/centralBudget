@@ -7,6 +7,7 @@ import EditPage from './components/editPage';
 import NotFound from './components/notFound';
 import LoginPage from './components/loginPage';
 import PrivateRoute from './routers/privateRoute';
+import PublicRoute from './routers/publicRoute';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,7 +18,7 @@ class App extends Component {
       <React.Fragment>
         <main className="container">
           <Switch>
-            <Route path='/' exact component={LoginPage}/>
+            <PublicRoute path='/' exact component={LoginPage}/>
           <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
             <PrivateRoute path="/create" component={AddExpensePage} />
             <PrivateRoute path="/edit/:id" component={EditPage} />

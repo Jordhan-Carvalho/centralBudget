@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { startLogout } from "../actions/auth";
 
-export const NavBar = ({ startLogout, user }) => {
+export const NavBar = ({ startLogout }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
@@ -31,22 +31,11 @@ export const NavBar = ({ startLogout, user }) => {
           <NavLink className="nav-item nav-link" to="/help">
             Help
           </NavLink>
-          {!user ? (
-            <React.Fragment>
-              <span className="nav-item nav-link" onClick={startLogout}>
-                Logout
-              </span>
-            </React.Fragment>
-          ) : (
-            <React.Fragment>
-              <NavLink className="nav-item nav-link" to="/profile">
-                {user.name}
-              </NavLink>
-              <NavLink className="nav-item nav-link" to="/logout">
-                Logout
-              </NavLink>
-            </React.Fragment>
-          )}
+          <React.Fragment>
+            <span className="nav-item nav-link" onClick={startLogout}>
+              Logout
+            </span>
+          </React.Fragment>
         </div>
       </div>
     </nav>

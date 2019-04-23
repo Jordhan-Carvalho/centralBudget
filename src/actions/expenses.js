@@ -9,7 +9,8 @@ export const addExpense = (expense) => ({
     
   export const startAddExpense = (expenseData = {}) => {
     // only works bc redux middleware (redux thunk)
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
+      const uid = getState().auth.uid;
       const {
         description = '',
         note = '',
@@ -18,7 +19,7 @@ export const addExpense = (expense) => ({
       } = expenseData;
       const expense = {description, note, amount, createdAt};
       //save the data to firebase (aynsc call) (used the return to testing porpouse)
-        const ref = await db.ref('expenses').push(expense);
+        const ref = await db.ref(`users/${uid}/expenses`).push(expense);
       dispatch(addExpense({
         id: ref.key,
         ...expense
@@ -33,10 +34,11 @@ export const addExpense = (expense) => ({
   });
 
   export const startRemoveExpense = (expense) => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
+      const uid = getState().auth.uid;
         const id = expense.id;
   try{
-  await db.ref(`expenses/${id}`).remove();
+  await db.ref(`users/${uid}/expenses/${id}`).remove();
         dispatch(removeExpense(expense));
       } catch (error) {
         alert(error);
@@ -52,9 +54,10 @@ export const addExpense = (expense) => ({
   });
 
   export const startEditExpense = (id, updates) => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
+      const uid = getState().auth.uid;
       try{
-        await db.ref(`expenses/${id}`).update(updates);
+        await db.ref(`users/${uid}/expenses/${id}`).update(updates);
         dispatch(editExpense(id, updates));
       } catch (error) {
         console.log(error);
@@ -70,11 +73,12 @@ export const addExpense = (expense) => ({
 
   // export const startSetExpenses
   export const startSetExpenses = () => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
+      const uid = getState().auth.uid;
   // 1. fetch all expense data once
   //2. Parse the data to array
   const expenses = []; 
-  await db.ref('expenses').once('value', (snapshot) => {
+  await db.ref(`users/${uid}/expenses`).once('value', (snapshot) => {
         snapshot.forEach((childSnapshot) => {
                 expenses.push({
                     id: childSnapshot.key,
