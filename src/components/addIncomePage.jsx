@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Form from "./common/form";
-import { startAddExpense } from "../actions/expenses";
+import { startAddIncome } from "../actions/incomes";
 
-export class AddExpensePage extends Component {
-  onSubmit = expense => {
-    this.props.startAddExpense(expense);
+export class AddIncomePage extends Component {
+  onSubmit = income => {
+    this.props.startAddIncome(income);
     this.props.history.push("/dashboard");
   };
 
   render() {
     return (
       <React.Fragment>
-        <h1>Add Expense</h1>
+        <h1>Add Income</h1>
         <Form onSubmit={this.onSubmit} />
       </React.Fragment>
     );
@@ -22,11 +22,11 @@ export class AddExpensePage extends Component {
 // to simplify props.dispatch(addExpense(expense)) to props.onSubmit(expense)
 const mapDispatchToProps = dispatch => {
   return {
-    startAddExpense: expense => dispatch(startAddExpense(expense))
+    startAddIncome: income => dispatch(startAddIncome(income))
   };
 };
 
 export default connect(
   undefined,
   mapDispatchToProps
-)(AddExpensePage);
+)(AddIncomePage);

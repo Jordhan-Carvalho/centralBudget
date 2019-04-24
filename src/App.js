@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import AddExpensePage from './components/addExpensePage';
-import ExpenseDashboardPage from './components/expenseDashboardPage';
+import AddIncomePage from './components/addIncomePage';
+import DashboardPage from './components/dashboardPage';
 import HelpPage from './components/helpPage';
-import EditPage from './components/editPage';
+import EditIncomePage from './components/editIncomePage';
+import EditExpensePage from './components/editExpensePage';
 import NotFound from './components/notFound';
 import LoginPage from './components/loginPage';
 import PrivateRoute from './routers/privateRoute';
@@ -16,17 +18,19 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <main className="container-fluid">
+        <div className="container-fluid">
           <Switch>
             <PublicRoute path='/' exact component={LoginPage}/>
-          <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
+            <PrivateRoute path="/dashboard" component={DashboardPage} />
             <PrivateRoute path="/create" component={AddExpensePage} />
-            <PrivateRoute path="/edit/:id" component={EditPage} />
-            <Route path="/help" component={HelpPage} />
+            <PrivateRoute path="/createinc" component={AddIncomePage} />
+            <PrivateRoute path="/edit/expense/:id" component={EditExpensePage} />
+            <PrivateRoute path="/edit/income/:id" component={EditIncomePage} />
+            <PrivateRoute path="/help" component={HelpPage} />
             <Route path="/not-found" component={NotFound} />
             <Redirect to="/not-found" />
           </Switch>
-        </main>
+        </div>
       </React.Fragment>
     );
   }

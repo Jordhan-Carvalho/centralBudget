@@ -7,9 +7,9 @@ import {
   sortByDate,
   setStartDate,
   setEndDate
-} from "../actions/filters";
+} from "../../actions/filters";
 
-export class ExpenseListFilters extends Component {
+export class ListFilters extends Component {
   state = {
     calendarFocused: null
   };
@@ -76,4 +76,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ExpenseListFilters);
+)(ListFilters);

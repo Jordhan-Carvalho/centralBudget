@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import numeral from "numeral";
 
-const ExpenseListItem = props => {
+const ListItem = props => {
   return (
     <React.Fragment>
       {props.expenses.map(obj => (
         <div key={obj.id}>
-          <Link to={`/edit/${obj.id}`}>
+          <Link to={`/edit/${props.type}/${obj.id}`}>
             <h3>{obj.description}</h3>
           </Link>
           <ul>
@@ -21,4 +21,4 @@ const ExpenseListItem = props => {
   );
 };
 
-export default ExpenseListItem;
+export default ListItem;

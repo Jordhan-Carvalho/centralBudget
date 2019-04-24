@@ -5,6 +5,7 @@ import { createBrowserHistory } from 'history';
 import { Provider } from 'react-redux';
 import configStore from './store/configStore';
 import { startSetExpenses } from './actions/expenses';
+import { startSetIncomes } from './actions/incomes';
 import { login, logout } from './actions/auth';
 import LoadingPage from './components/loadingPage';
 import App from './App';
@@ -40,6 +41,7 @@ firebase.auth().onAuthStateChanged((user) => {
     (async () => {
       await store.dispatch(login(user.uid));
       await store.dispatch(startSetExpenses());
+      await store.dispatch(startSetIncomes());
       renderApp();
       if (history.location.pathname === '/') history.push('/dashboard')
       })();

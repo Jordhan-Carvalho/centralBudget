@@ -9,10 +9,14 @@ const PrivateRouter = ({ isAuth, component: Component, ...rest }) => {
       {...rest}
       component={props =>
         isAuth ? (
-          <React.Fragment>
-            <NavBar />
-            <Component {...props} />{" "}
-          </React.Fragment>
+          <div className="row">
+            <div className="col-2 nopadding">
+              <NavBar {...props} />
+            </div>
+            <div className="col-10 app-info">
+              <Component {...props} />
+            </div>
+          </div>
         ) : (
           <Redirect to="/" />
         )

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import ExpenseListItem from "./expenseListItem";
-import selectExpenses from "../selectors/expenses";
+import ListItem from "./common/listItem";
+import selectVisible from "../selectors/visibleTrans";
 
 export const ExpenseList = props => {
   return (
@@ -10,7 +10,7 @@ export const ExpenseList = props => {
       {props.expenses.length === 0 ? (
         <p>No expenses</p>
       ) : (
-        <ExpenseListItem expenses={props.expenses} />
+        <ListItem type={"expense"} expenses={props.expenses} />
       )}
     </div>
   );
@@ -19,7 +19,7 @@ export const ExpenseList = props => {
 // redux call
 const mapStateToProps = state => {
   return {
-    expenses: selectExpenses(state.expenses, state.filters)
+    expenses: selectVisible(state.expenses, state.filters)
   };
 };
 

@@ -1,60 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render NavBar correctly 1`] = `
-<nav
-  className="navbar navbar-expand-lg navbar-light bg-light"
->
-  <Link
-    className="navbar-brand"
-    to="/"
-  >
-    Central Budget
-  </Link>
-  <button
-    aria-controls="navbarNavAltMarkup"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    className="navbar-toggler"
-    data-target="#navbarNavAltMarkup"
-    data-toggle="collapse"
-    type="button"
-  >
-    <span
-      className="navbar-toggler-icon"
-    />
-  </button>
+<Fragment>
   <div
-    className="collapse navbar-collapse"
-    id="navbarNavAltMarkup"
+    id="cont"
   >
     <div
-      className="navbar-nav"
+      id="menu-fixed"
     >
-      <NavLink
-        className="nav-item nav-link"
-        to="/movies"
+      <a
+        href="#cont"
       >
-        Movies
-      </NavLink>
-      <NavLink
-        className="nav-item nav-link"
-        to="/customers"
+        <i
+          className="material-icons back"
+        >
+          
+        </i>
+      </a>
+      <a
+        href="#menu-fixed"
       >
-        Customers
-      </NavLink>
-      <NavLink
-        className="nav-item nav-link"
-        to="/help"
+        <div
+          className="logo"
+        >
+          <span />
+          <p>
+            Central Budget
+          </p>
+        </div>
+        <p
+          className="pmenu"
+        >
+          MENU
+        </p>
+      </a>
+      <hr />
+      <ul
+        className="menu"
       >
-        Help
-      </NavLink>
-      <span
-        className="nav-item nav-link"
-        onClick={[Function]}
+        <NavLink
+          to="/dashboard"
+        >
+          <li>
+            <i
+              className="material-icons"
+            >
+              
+            </i>
+            <p>
+              Home
+            </p>
+          </li>
+        </NavLink>
+        <NavLink
+          to="/create"
+        >
+          <li>
+            <i
+              className="material-icons"
+            >
+              
+            </i>
+            <p>
+              Create
+            </p>
+          </li>
+        </NavLink>
+        <li>
+          <i
+            className="material-icons"
+          >
+            
+          </i>
+          <p>
+            Shop
+          </p>
+        </li>
+        <li>
+          <i
+            className="material-icons"
+          >
+            
+          </i>
+          <p>
+            Settings
+          </p>
+        </li>
+        <li
+          onClick={[Function]}
+        >
+          <i
+            className="material-icons"
+          >
+            desktop_access_disabled
+          </i>
+          <p>
+            Logout
+          </p>
+        </li>
+      </ul>
+      <i
+        className="material-icons info"
       >
-        Logout
-      </span>
+        
+      </i>
     </div>
   </div>
-</nav>
+</Fragment>
 `;

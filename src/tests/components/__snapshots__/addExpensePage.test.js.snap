@@ -3,9 +3,9 @@
 exports[`should render AddExpensePage correctly 1`] = `
 <Fragment>
   <h1>
-    Add exprense
+    Add Expense
   </h1>
-  <ExpenseForm
+  <Form
     onSubmit={[Function]}
   />
 </Fragment>

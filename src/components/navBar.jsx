@@ -1,48 +1,68 @@
-import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { startLogout } from "../actions/auth";
 
-export const NavBar = ({ startLogout }) => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
-        Central Budget
-      </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          <NavLink className="nav-item nav-link" to="/movies">
-            Movies
-          </NavLink>
-          <NavLink className="nav-item nav-link" to="/customers">
-            Customers
-          </NavLink>
-          <NavLink className="nav-item nav-link" to="/help">
-            Help
-          </NavLink>
-          <React.Fragment>
-            <span className="nav-item nav-link" onClick={startLogout}>
-              Logout
-            </span>
-          </React.Fragment>
+export class NavBar extends Component {
+  state = {
+    selected: ""
+  };
+  render() {
+    return (
+      <React.Fragment>
+        <div id="cont">
+          <div id="menu-fixed">
+            <a href="#cont">
+              <i className="material-icons back">&#xE314;</i>
+            </a>
+            <a href="#menu-fixed">
+              <div className="logo">
+                <span />
+                <p>Central Budget</p>
+              </div>
+              <p className="pmenu">MENU</p>
+            </a>
+            <hr />
+            <ul className="menu">
+              <Link to="/dashboard">
+                <li>
+                  <i className="material-icons">&#xE88A;</i>
+                  <p>Home</p>
+                </li>
+              </Link>
+              <Link to="/createinc">
+                <li>
+                  <i className="material-icons"> add</i>
+                  <p>Income</p>
+                </li>
+              </Link>
+              <Link to="/create">
+                <li>
+                  <i className="material-icons">remove</i>
+                  <p>Expense</p>
+                </li>
+              </Link>
+              <Link to="/help">
+                <li>
+                  <i className="material-icons">&#xE8B8;</i>
+                  <p>Settings</p>
+                </li>
+              </Link>
+              <li onClick={this.props.startLogout}>
+                <i className="material-icons">desktop_access_disabled</i>
+                <p>Logout</p>
+              </li>
+            </ul>
+            <i className="material-icons info">&#xE88E;</i>
+          </div>
         </div>
-      </div>
-    </nav>
-  );
-};
+      </React.Fragment>
+    );
+  }
+}
 
 // redux
+
 const mapDispatchToProps = dispatch => ({
   startLogout: () => dispatch(startLogout())
 });

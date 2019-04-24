@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import expensesReducer from '../reducers/expenses';
 import filtersReducer from '../reducers/filters';
 import authReducer from '../reducers/auth';
+import incomesReducer from '../reducers/incomes';
 
 export default () => {
 
@@ -10,6 +11,7 @@ export default () => {
 
 const store = createStore(
     combineReducers({
+      incomes: incomesReducer,
       expenses: expensesReducer,
       filters: filtersReducer,
       auth: authReducer

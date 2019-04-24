@@ -16,7 +16,7 @@ exports[`should render ExpenseList with expenses 1`] = `
   <h1>
     Expense List
   </h1>
-  <ExpenseListItem
+  <ListItem
     expenses={
       Array [
         Object {
@@ -42,6 +42,7 @@ exports[`should render ExpenseList with expenses 1`] = `
         },
       ]
     }
+    type="expense"
   />
 </div>
 `;
