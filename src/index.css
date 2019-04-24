@@ -1,5 +1,5 @@
 body {
-  background-color: #0c1b21 !important;
+  background-color: #0c1b21;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -13,23 +13,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-p {
-  color: white;
-}
-h1 {
-  color: white !important;
-}
-
-label {
-  color: white;
-}
-
-a {
-  color: grey !important;
-}
-
-li {
-  color: white;
 }

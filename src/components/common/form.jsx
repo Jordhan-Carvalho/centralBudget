@@ -108,7 +108,7 @@ class Form extends Component {
               onChange={this.onNoteChange}
             />
           </div>
-          <button className="btn btn-info">Add Transaction</button>
+          <button className="btn btn-dark">Add Transaction</button>
         </form>
       </div>
     );
