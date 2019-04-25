@@ -6,7 +6,6 @@ import selectVisible from "../selectors/visibleTrans";
 export const ExpenseList = props => {
   return (
     <div>
-      <h1>Expense List</h1>
       {props.expenses.length === 0 ? (
         <p>No expenses</p>
       ) : (

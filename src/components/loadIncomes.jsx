@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import IncomeList from "./incomeList";
-import ListFilters from "./common/listFilters";
 import TransSumary from "./common/transSumary";
 
 class LoadIncome extends Component {
@@ -9,9 +8,8 @@ class LoadIncome extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Hello</h1>
+        <h1>Incomes List</h1>
         <TransSumary type={"income"} />
-        <ListFilters />
         <IncomeList />
         <Link to="/createinc">Add income</Link>
       </React.Fragment>
