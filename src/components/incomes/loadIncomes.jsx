@@ -10,10 +10,15 @@ class LoadIncome extends Component {
     return (
       <React.Fragment>
         <h1>Incomes List</h1>
+        <hr />
         <ListFilters />
         <TransSumary type={"income"} />
+        <hr />
         <IncomeList />
-        <Link to="/createinc">Add income</Link>
+        <hr />
+        <Link to="/createinc">
+          <button className="btn btn-dark">Add Income</button>
+        </Link>
       </React.Fragment>
     );
   }

@@ -10,10 +10,15 @@ class LoadSaving extends Component {
     return (
       <React.Fragment>
         <h1>Savings List</h1>
+        <hr />
         <ListFilters />
         <TransSumary type={"saving"} />
+        <hr />
         <SavingList />
-        <Link to="/createsav">Add saving</Link>
+        <hr />
+        <Link to="/createsav">
+          <button className="btn btn-dark">Add Saving</button>
+        </Link>
       </React.Fragment>
     );
   }

@@ -79,7 +79,7 @@ export class SavingsChart extends Component {
           <Tooltip />
           <Legend />
           <CartesianGrid stroke="#f5f5f5" />
-          <Legend verticalAlign="top" height={36} />
+          <Legend verticalAlign="bottom" height={36} />
           <Area
             type="monotone"
             dataKey="expenses"

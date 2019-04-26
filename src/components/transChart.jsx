@@ -77,7 +77,7 @@ export class TransChart extends Component {
           <YAxis />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
-          <Legend verticalAlign="top" height={36} />
+          <Legend verticalAlign="bottom" height={36} />
           <Area
             type="monotone"
             dataKey="expenses"
