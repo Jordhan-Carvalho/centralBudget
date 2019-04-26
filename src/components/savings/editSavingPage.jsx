@@ -9,7 +9,8 @@ export class EditSavingPage extends Component {
     this.props.history.push("/savings");
   };
 
-  onSubmit = saving => {
+  onSubmit = ({ description, note, amount, createdAt }) => {
+    const saving = { description, note, amount, createdAt };
     this.props.startEditSaving(this.props.saving.id, saving);
     this.props.history.push("/savings");
   };
@@ -19,7 +20,11 @@ export class EditSavingPage extends Component {
       <div className="form-group">
         <h1>Edit {this.props.saving.description}</h1>
         <div className="form-group">
-          <Form expense={this.props.saving} onSubmit={this.onSubmit} />
+          <Form
+            expense={this.props.saving}
+            onSubmit={this.onSubmit}
+            isIncome={false}
+          />
         </div>
         <div className="form-group">
           <button className="btn btn-danger" onClick={this.onRemove}>

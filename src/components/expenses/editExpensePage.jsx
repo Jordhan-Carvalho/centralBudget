@@ -9,7 +9,8 @@ export class EditExpensePage extends Component {
     this.props.history.push("/expenses");
   };
 
-  onSubmit = expense => {
+  onSubmit = ({ description, note, amount, createdAt }) => {
+    const expense = { description, note, amount, createdAt };
     this.props.startEditExpense(this.props.expense.id, expense);
     this.props.history.push("/expenses");
   };

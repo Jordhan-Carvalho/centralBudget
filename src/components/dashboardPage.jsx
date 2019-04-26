@@ -1,7 +1,4 @@
 import React, { Component } from "react";
-import LoadExpenses from "./expenses/loadExpenses";
-import LoadIncomes from "./incomes/loadIncomes";
-import LoadSavings from "./savings/loadSavings";
 import TransChart from "./transChart";
 import SavingsChart from "./savingsChart";
 import ListFilters from "./common/listFilters";

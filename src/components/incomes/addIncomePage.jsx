@@ -13,7 +13,7 @@ export class AddIncomePage extends Component {
     return (
       <React.Fragment>
         <h1>Add Income</h1>
-        <Form onSubmit={this.onSubmit} />
+        <Form onSubmit={this.onSubmit} isIncome={true} />
       </React.Fragment>
     );
   }

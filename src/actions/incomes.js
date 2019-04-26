@@ -1,4 +1,5 @@
 import db from '../firebase/firebase';
+import { startAddSaving } from './savings';
 
 // ADD_INCOME
 export const addIncome = (income) => ({
@@ -11,13 +12,22 @@ export const addIncome = (income) => ({
     // only works bc redux middleware (redux thunk)
     return async (dispatch, getState) => {
       const uid = getState().auth.uid;
+      //default value
       const {
         description = '',
         note = '',
         amount = 0,
-        createdAt = 0
+        createdAt = 0,
+        tax=0
       } = incomeData;
-      const income = {description, note, amount, createdAt};
+      // line for tax
+      const taxIncome = {description, note, amount, createdAt, tax};
+      const taxAmount = ((taxIncome.amount*(tax/100)));
+      taxIncome.amount = (taxIncome.tax === 0 ?  taxIncome.amount : (taxIncome.amount-taxAmount));
+      const income = {description: taxIncome.description, note: taxIncome.note, amount: taxIncome.amount, createdAt: taxIncome.createdAt};
+      console.log(taxAmount);
+      if (taxIncome.tax !== 0)  dispatch(startAddSaving({...income, amount: taxAmount}));
+      //end tax
       //save the data to firebase (aynsc call) (used the return to testing porpouse)
         const ref = await db.ref(`users/${uid}/incomes`).push(income);
       dispatch(addIncome({

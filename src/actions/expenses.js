@@ -1,5 +1,6 @@
 import db from '../firebase/firebase';
 
+
 // ADD_EXPENSE
 export const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',
@@ -15,7 +16,7 @@ export const addExpense = (expense) => ({
         description = '',
         note = '',
         amount = 0,
-        createdAt = 0
+        createdAt = 0,
       } = expenseData;
       const expense = {description, note, amount, createdAt};
       //save the data to firebase (aynsc call) (used the return to testing porpouse)

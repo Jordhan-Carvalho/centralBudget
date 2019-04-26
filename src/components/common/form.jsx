@@ -12,6 +12,7 @@ class Form extends Component {
       amount: props.expense ? (props.expense.amount / 100).toString() : "",
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
+      tax: 0,
       error: ""
     };
   }
@@ -39,6 +40,11 @@ class Form extends Component {
     }
   };
 
+  onTaxChange = e => {
+    const tax = parseInt(e.target.value);
+    this.setState({ tax });
+  };
+
   onFocusChange = ({ focused }) => {
     this.setState({ calendarFocused: focused });
   };
@@ -55,14 +61,15 @@ class Form extends Component {
         description: this.state.description,
         amount: parseFloat(this.state.amount, 10) * 100,
         createdAt: this.state.createdAt.valueOf(),
-        note: this.state.note
+        note: this.state.note,
+        tax: this.state.tax
       });
     }
   };
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
@@ -108,9 +115,25 @@ class Form extends Component {
               onChange={this.onNoteChange}
             />
           </div>
+
+          {this.props.isIncome ? (
+            <div className="form-group">
+              <label htmlFor="tax">Tax for savings (Optional)</label>
+              <input
+                id="tax"
+                className="form-control"
+                type="number"
+                placeholder="%"
+                onChange={this.onTaxChange}
+              />
+            </div>
+          ) : (
+            <div />
+          )}
+
           <button className="btn btn-dark">Add Transaction</button>
         </form>
-      </div>
+      </React.Fragment>
     );
   }
 }

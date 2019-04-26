@@ -5,11 +5,12 @@ import { startEditIncome, startRemoveIncome } from "../../actions/incomes";
 
 export class EditIncomePage extends Component {
   onRemove = () => {
-    this.props.startRemoveExpense(this.props.income);
+    this.props.startRemoveIncome(this.props.income);
     this.props.history.push("/incomes");
   };
 
-  onSubmit = income => {
+  onSubmit = ({ description, note, amount, createdAt }) => {
+    const income = { description, note, amount, createdAt };
     this.props.startEditIncome(this.props.income.id, income);
     this.props.history.push("/incomes");
   };

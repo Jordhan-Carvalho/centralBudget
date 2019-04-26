@@ -18,6 +18,7 @@ export const addSaving = (saving) => ({
         createdAt = 0
       } = savingData;
       const saving = {description, note, amount, createdAt};
+      console.log(saving);
       //save the data to firebase (aynsc call) (used the return to testing porpouse)
         const ref = await db.ref(`users/${uid}/savings`).push(saving);
       dispatch(addSaving({
