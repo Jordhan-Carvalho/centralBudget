@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import ListItem from "./common/listItem";
-import selectVisible from "../selectors/visibleTrans";
+import ListItem from "../common/listItem";
+import selectVisible from "../../selectors/visibleTrans";
 
 export const IncomeList = props => {
   return (

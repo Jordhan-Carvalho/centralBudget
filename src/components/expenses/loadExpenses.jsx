@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ExpenseList from "./expenseList";
-import TransSumary from "./common/transSumary";
+import ListFilters from "../common/listFilters";
+import TransSumary from "../common/transSumary";
 
 class LoadExpenses extends Component {
   state = {};
@@ -9,6 +10,7 @@ class LoadExpenses extends Component {
     return (
       <React.Fragment>
         <h1>Expense List</h1>
+        <ListFilters />
         <TransSumary type={"expense"} />
         <ExpenseList />
         <Link to="/create">Add expense</Link>

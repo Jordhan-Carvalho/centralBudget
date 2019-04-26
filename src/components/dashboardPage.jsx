@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import LoadExpenses from "./loadExpenses";
-import LoadIncomes from "./loadIncomes";
+import LoadExpenses from "./expenses/loadExpenses";
+import LoadIncomes from "./incomes/loadIncomes";
+import LoadSavings from "./savings/loadSavings";
 import TransChart from "./transChart";
+import SavingsChart from "./savingsChart";
 import ListFilters from "./common/listFilters";
+import TransSumary from "./common/transSumary";
 
 class DashboardPage extends Component {
   render() {
@@ -16,17 +19,16 @@ class DashboardPage extends Component {
 
         <div className="row justify-content-center">
           <div className="col-12 boxdash">
-            <ListFilters />
+            <SavingsChart height={200} />
           </div>
         </div>
 
         <div className="row">
-          <div className="col-6">
-            <LoadExpenses />
-          </div>
-
-          <div className="col-6">
-            <LoadIncomes />
+          <div className="col-12 boxdash">
+            <ListFilters />
+            <TransSumary type={"expense"} />
+            <TransSumary type={"income"} />
+            <TransSumary type={"saving"} />
           </div>
         </div>
       </React.Fragment>

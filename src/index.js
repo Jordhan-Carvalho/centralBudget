@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import configStore from './store/configStore';
 import { startSetExpenses } from './actions/expenses';
 import { startSetIncomes } from './actions/incomes';
+import { startSetSavings } from './actions/savings'
 import { login, logout } from './actions/auth';
 import LoadingPage from './components/loadingPage';
 import App from './App';
@@ -42,6 +43,7 @@ firebase.auth().onAuthStateChanged((user) => {
       await store.dispatch(login(user.uid));
       await store.dispatch(startSetExpenses());
       await store.dispatch(startSetIncomes());
+      await store.dispatch(startSetSavings());
       renderApp();
       if (history.location.pathname === '/') history.push('/dashboard')
       })();

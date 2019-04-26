@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Form from "./common/form";
-import { startEditExpense, startRemoveExpense } from "../actions/expenses";
+import Form from "../common/form";
+import { startEditExpense, startRemoveExpense } from "../../actions/expenses";
 
 export class EditExpensePage extends Component {
   onRemove = () => {
     this.props.startRemoveExpense(this.props.expense);
-    this.props.history.push("/");
+    this.props.history.push("/expenses");
   };
 
   onSubmit = expense => {
     this.props.startEditExpense(this.props.expense.id, expense);
-    this.props.history.push("/");
+    this.props.history.push("/expenses");
   };
 
   render() {

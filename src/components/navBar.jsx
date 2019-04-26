@@ -30,16 +30,22 @@ export class NavBar extends Component {
                   <p>Home</p>
                 </li>
               </Link>
-              <Link to="/createinc">
+              <Link to="/incomes">
                 <li>
                   <i className="material-icons"> add</i>
-                  <p>Income</p>
+                  <p>Incomes</p>
                 </li>
               </Link>
-              <Link to="/create">
+              <Link to="/expenses">
                 <li>
                   <i className="material-icons">remove</i>
-                  <p>Expense</p>
+                  <p>Expenses</p>
+                </li>
+              </Link>
+              <Link to="/savings">
+                <li>
+                  <i className="material-icons">attach_money</i>
+                  <p>Savings</p>
                 </li>
               </Link>
               <Link to="/help">

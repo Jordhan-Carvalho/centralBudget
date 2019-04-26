@@ -1,34 +1,40 @@
-import React from "react";
+import React, { Component } from "react";
 import { connect } from "react-redux";
 import numeral from "numeral";
 import selectVisible from "../../selectors/visibleTrans";
 import getTotal from "../../selectors/transaction-total";
 
-export const TransSumary = props => {
-  return (
-    <React.Fragment>
-      {props.type === "expense" ? (
-        <p>
-          Viewing {props.expenses.length}{" "}
-          {props.expenses.length === 1 ? "expense" : "expenses"}, totalling{" "}
-          {numeral(getTotal(props.expenses) / 100).format("$0,0.00")}
-        </p>
-      ) : (
-        <p>
-          Viewing {props.incomes.length}{" "}
-          {props.incomes.length === 1 ? "income" : "incomes"}, totalling{" "}
-          {numeral(getTotal(props.incomes) / 100).format("$0,0.00")}
-        </p>
-      )}
-    </React.Fragment>
-  );
-};
+class TransSumary extends Component {
+  state = {};
+
+  renderTrans = type => {
+    let trans;
+    if (type === "expense") {
+      trans = this.props.expenses;
+    } else if (type === "income") {
+      trans = this.props.incomes;
+    } else if (type === "saving") {
+      trans = this.props.savings;
+    }
+    return (
+      <p>
+        There's {trans.length} {trans.length === 1 ? type : `${type}s`},
+        totalling {numeral(getTotal(trans) / 100).format("$0,0.00")}
+      </p>
+    );
+  };
+
+  render() {
+    return <React.Fragment>{this.renderTrans(this.props.type)}</React.Fragment>;
+  }
+}
 
 //redux
 const mapStateToProps = state => {
   return {
     expenses: selectVisible(state.expenses, state.filters),
-    incomes: selectVisible(state.incomes, state.filters)
+    incomes: selectVisible(state.incomes, state.filters),
+    savings: selectVisible(state.savings, state.filters)
   };
 };
 

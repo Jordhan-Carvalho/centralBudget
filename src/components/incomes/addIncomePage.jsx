@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Form from "./common/form";
-import { startAddIncome } from "../actions/incomes";
+import Form from "../common/form";
+import { startAddIncome } from "../../actions/incomes";
 
 export class AddIncomePage extends Component {
   onSubmit = income => {
     this.props.startAddIncome(income);
-    this.props.history.push("/dashboard");
+    this.props.history.push("/incomes");
   };
 
   render() {

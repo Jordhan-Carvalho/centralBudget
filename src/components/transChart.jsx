@@ -6,7 +6,8 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
-  Tooltip
+  Tooltip,
+  Legend
 } from "recharts";
 import { connect } from "react-redux";
 import {
@@ -57,7 +58,7 @@ export class TransChart extends Component {
 
   render() {
     return (
-      <ResponsiveContainer width="80%" height={this.props.height}>
+      <ResponsiveContainer width="100%" height={this.props.height}>
         <AreaChart
           data={this.state.data}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
@@ -76,6 +77,7 @@ export class TransChart extends Component {
           <YAxis />
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
+          <Legend verticalAlign="top" height={36} />
           <Area
             type="monotone"
             dataKey="expenses"
