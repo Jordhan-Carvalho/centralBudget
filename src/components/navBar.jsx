@@ -18,7 +18,7 @@ export class NavBar extends Component {
             <a href="#menu-fixed">
               <div className="logo">
                 <span />
-                <p>Central Budget</p>
+                <p>CB</p>
               </div>
               <p className="pmenu">MENU</p>
             </a>

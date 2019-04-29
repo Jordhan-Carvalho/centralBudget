@@ -25,7 +25,7 @@ exports[`should render NavBar correctly 1`] = `
         >
           <span />
           <p>
-            Central Budget
+            CB
           </p>
         </div>
         <p
@@ -38,7 +38,7 @@ exports[`should render NavBar correctly 1`] = `
       <ul
         className="menu"
       >
-        <NavLink
+        <Link
           to="/dashboard"
         >
           <li>
@@ -51,41 +51,63 @@ exports[`should render NavBar correctly 1`] = `
               Home
             </p>
           </li>
-        </NavLink>
-        <NavLink
-          to="/create"
+        </Link>
+        <Link
+          to="/incomes"
         >
           <li>
             <i
               className="material-icons"
             >
-              
+               add
             </i>
             <p>
-              Create
+              Incomes
             </p>
           </li>
-        </NavLink>
-        <li>
-          <i
-            className="material-icons"
-          >
-            
-          </i>
-          <p>
-            Shop
-          </p>
-        </li>
-        <li>
-          <i
-            className="material-icons"
-          >
-            
-          </i>
-          <p>
-            Settings
-          </p>
-        </li>
+        </Link>
+        <Link
+          to="/expenses"
+        >
+          <li>
+            <i
+              className="material-icons"
+            >
+              remove
+            </i>
+            <p>
+              Expenses
+            </p>
+          </li>
+        </Link>
+        <Link
+          to="/savings"
+        >
+          <li>
+            <i
+              className="material-icons"
+            >
+              attach_money
+            </i>
+            <p>
+              Savings
+            </p>
+          </li>
+        </Link>
+        <Link
+          to="/help"
+        >
+          <li>
+            <i
+              className="material-icons"
+            >
+              
+            </i>
+            <p>
+              Settings
+            </p>
+          </li>
+        </Link>
         <li
           onClick={[Function]}
         >

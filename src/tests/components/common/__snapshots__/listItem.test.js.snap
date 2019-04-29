@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render list of expenses 1`] = `
+<table
+  className="table"
+>
+  <thead
+    className="thead-dark"
+  >
+    <tr>
+      <th
+        scope="col"
+      >
+        Title
+      </th>
+      <th
+        scope="col"
+      >
+        Amount
+      </th>
+      <th
+        scope="col"
+      >
+        Note
+      </th>
+      <th
+        scope="col"
+      >
+        Date
+      </th>
+      <th
+        scope="col"
+      >
+        Edit
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      key="1"
+    >
+      <td>
+        Gum
+      </td>
+      <td>
+        $1.95
+      </td>
+      <td />
+      <td>
+        December 31st, 1969
+      </td>
+      <td>
+        <Link
+          to="/edit/undefined/1"
+        >
+          Edit
+        </Link>
+      </td>
+    </tr>
+    <tr
+      key="2"
+    >
+      <td>
+        Rent
+      </td>
+      <td>
+        $1,095.00
+      </td>
+      <td />
+      <td>
+        December 27th, 1969
+      </td>
+      <td>
+        <Link
+          to="/edit/undefined/2"
+        >
+          Edit
+        </Link>
+      </td>
+    </tr>
+    <tr
+      key="3"
+    >
+      <td>
+        Credit Card
+      </td>
+      <td>
+        $45.00
+      </td>
+      <td />
+      <td>
+        January 4th, 1970
+      </td>
+      <td>
+        <Link
+          to="/edit/undefined/3"
+        >
+          Edit
+        </Link>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

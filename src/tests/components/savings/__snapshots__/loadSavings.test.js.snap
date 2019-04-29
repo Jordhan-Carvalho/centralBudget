@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render saving page 1`] = `
+<Fragment>
+  <h1>
+    Savings List
+  </h1>
+  <hr />
+  <ConnectFunction />
+  <ConnectFunction
+    type="saving"
+  />
+  <hr />
+  <ConnectFunction />
+  <hr />
+  <Link
+    to="/createsav"
+  >
+    <button
+      className="btn btn-dark"
+    >
+      Add Saving
+    </button>
+  </Link>
+</Fragment>
+`;

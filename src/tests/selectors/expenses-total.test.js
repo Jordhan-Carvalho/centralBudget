@@ -1,4 +1,4 @@
-import getExpensesTotal from '../../selectors/expenses-total';
+import getExpensesTotal from '../../selectors/transaction-total';
 import expenses from '../fixtures/expenses';
 
 test('should return 0 if no expenses', () => {

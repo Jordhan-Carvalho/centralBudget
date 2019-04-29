@@ -11,6 +11,6 @@ test('should render NavBar correctly', () => {
 test('should call startLogout on button click', () => {
     const startLogout = jest.fn();
     const wrapper = shallow(<NavBar startLogout={startLogout}/>);
-    wrapper.find('span').at(1).simulate('click');
+    wrapper.find('li').at(5).simulate('click');
     expect(startLogout).toHaveBeenCalled();
 });

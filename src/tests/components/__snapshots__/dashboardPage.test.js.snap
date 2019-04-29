@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render the dashboard page 1`] = `
+<Fragment>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-12 boxdash"
+    >
+      <h3>
+        Expenses and Incomes Chart
+      </h3>
+      <ConnectFunction
+        height={200}
+      />
+    </div>
+  </div>
+  <div
+    className="row justify-content-center"
+  >
+    <div
+      className="col-12 boxdash"
+    >
+      <h3>
+        Savings Chart
+      </h3>
+      <ConnectFunction
+        height={200}
+      />
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      align="center"
+      className="col-12 boxdash"
+    >
+      <ConnectFunction
+        isDashboard={true}
+      />
+      <hr />
+      <ConnectFunction
+        type="expense"
+      />
+      <ConnectFunction
+        type="income"
+      />
+      <ConnectFunction
+        type="saving"
+      />
+    </div>
+  </div>
+</Fragment>
+`;

@@ -1,4 +1,4 @@
-import selectExpenses from '../../selectors/expenses';
+import selectExpenses from '../../selectors/visibleTrans';
 import moment from 'moment';
 import expenses from '../fixtures/expenses';
 

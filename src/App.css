@@ -1,37 +1,50 @@
-.App {
+/* under construction */
+.object-cs {
+  position: absolute;
+  animation: sway 2.4s infinite;
+  animation-timing-function: ease-in-out;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  transform-origin: top;
+  left: 0;
+  right: 0;
+  height: 5%;
+  z-index: 999;
+  text-transform: uppercase;
+}
+.object-cs .object-rope {
+  height: 100%;
+  width: 5px;
+  background-color: #222222;
+  content: "";
+  display: block;
+  margin-left: 50%;
+}
+.object-cs .object-shape {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  background-color: #222222;
+  margin: 0 auto;
+  position: relative;
+  color: #fff;
   text-align: center;
+  padding-top: 25px;
+  font-weight: 800;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.object-cs .object-shape:before {
+  content: "coming soon";
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.object-cs .object-shape span {
+  font-size: 22px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* etc */
 .nav-link {
   cursor: pointer;
 }
@@ -70,7 +83,7 @@
 }
 
 .box-layout__box {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 3px;
   text-align: center;
   padding: 3.2rem 1.6rem;
@@ -100,20 +113,7 @@
 
 #cont:target > menu-fixed {
   width: 80%;
-  background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: black;
   transition: all 0.3s;
 }
 #cont:target > menu-fixed > a .material-icons.back {
@@ -131,19 +131,7 @@
   width: 80%;
   z-index: 2;
   height: 100vh;
-  background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: black;
   position: auto;
   transition: all 0.3s;
   box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.19),
@@ -167,19 +155,7 @@
 }
 #menu-fixed:target {
   width: 100%;
-  background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: black;
 
   transition: all 0.3s ease-out;
 }
@@ -239,19 +215,7 @@
 #menu-fixed .logo span {
   width: 10px;
   height: 10px;
-  background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: black;
 
   position: absolute;
   margin: auto;
@@ -324,22 +288,10 @@
   border: none;
 }
 #menu-fixed .menu li:hover {
-  background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #2f2e2d;
 
   transition: all 0.3s;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 #menu-fixed .menu li:hover > .material-icons {
   color: white;

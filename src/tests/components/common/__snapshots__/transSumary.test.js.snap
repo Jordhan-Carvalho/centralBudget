@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TransSumary in caso of no expenses 1`] = `
+<Fragment>
+  <p>
+    There's 
+    0
+     
+    expenses
+    , totalling 
+    $0.00
+  </p>
+</Fragment>
+`;
+
+exports[`should render TransSumary with expenses 1`] = `
+<Fragment>
+  <p>
+    There's 
+    3
+     
+    expenses
+    , totalling 
+    $1,141.95
+  </p>
+</Fragment>
+`;

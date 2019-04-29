@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render edit income page correctly 1`] = `
+<div
+  className="form-group"
+>
+  <h1>
+    Edit 
+    Gum
+  </h1>
+  <div
+    className="form-group"
+  >
+    <Form
+      expense={
+        Object {
+          "amount": 195,
+          "createdAt": 0,
+          "description": "Gum",
+          "id": "1",
+          "note": "",
+        }
+      }
+      onSubmit={[Function]}
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <button
+      className="btn btn-danger"
+      onClick={[Function]}
+    >
+      Remove
+    </button>
+  </div>
+</div>
+`;

@@ -13,7 +13,7 @@ exports[`should render login page 1`] = `
       Central Budget
     </h1>
     <p>
-      It's time to get your expenses under control
+      It's time to get your budget under control
     </p>
     <button
       className="btn btn-dark"

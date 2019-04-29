@@ -15,7 +15,6 @@ import NotFound from './components/notFound';
 import LoginPage from './components/loginPage';
 import PrivateRoute from './routers/privateRoute';
 import PublicRoute from './routers/publicRoute';
-import logo from './logo.svg';
 import './App.css';
 
 

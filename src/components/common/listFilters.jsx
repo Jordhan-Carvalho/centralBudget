@@ -45,16 +45,21 @@ export class ListFilters extends Component {
             onChange={this.onTextChange}
           />
         </div>
-        <div className="col-auto">
-          <select
-            className="form-control"
-            value={this.props.filters.sortBy}
-            onChange={this.onSortChange}
-          >
-            <option value="date">Date</option>
-            <option value="amount">Amount</option>
-          </select>
-        </div>
+        {!this.props.isDashboard ? (
+          <div className="col-auto">
+            <select
+              className="form-control"
+              value={this.props.filters.sortBy}
+              onChange={this.onSortChange}
+            >
+              <option value="date">Date</option>
+              <option value="amount">Amount</option>
+            </select>
+          </div>
+        ) : (
+          <div className="col-auto" />
+        )}
+
         <div className="col-auto">
           <DateRangePicker
             startDate={this.props.filters.startDate}

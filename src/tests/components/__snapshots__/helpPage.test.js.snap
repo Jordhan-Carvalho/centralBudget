@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render HelpPage 1`] = `
+<div
+  class="object-cs"
+>
+  <div
+    class="object-rope"
+  />
+  <div
+    class="object-shape"
+  >
+    <span
+      class="soon"
+    />
+  </div>
+</div>
+`;

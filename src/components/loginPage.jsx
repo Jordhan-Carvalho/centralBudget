@@ -8,7 +8,7 @@ export class LoginPage extends Component {
       <div className="box-layout">
         <div className="box-layout__box">
           <h1 className="box-layout__title">Central Budget</h1>
-          <p>It's time to get your expenses under control</p>
+          <p>It's time to get your budget under control</p>
           <button className="btn btn-dark" onClick={this.props.startLogin}>
             {" "}
             Login{" "}

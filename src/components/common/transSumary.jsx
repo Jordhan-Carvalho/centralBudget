@@ -4,7 +4,7 @@ import numeral from "numeral";
 import selectVisible from "../../selectors/visibleTrans";
 import getTotal from "../../selectors/transaction-total";
 
-class TransSumary extends Component {
+export class TransSumary extends Component {
   state = {};
 
   renderTrans = type => {

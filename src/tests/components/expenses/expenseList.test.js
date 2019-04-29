@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ExpenseList } from '../../components/expenseList';
-import expenses from '../fixtures/expenses';
+import { ExpenseList } from '../../../components/expenses/expenseList';
+import expenses from '../../fixtures/expenses';
 
 // Testing with expenses
 test('should render ExpenseList with expenses', () => {

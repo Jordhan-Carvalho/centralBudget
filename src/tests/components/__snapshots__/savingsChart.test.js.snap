@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SavingsChart correctly 1`] = `
+<ResponsiveContainer
+  debounce={0}
+  height={400}
+  width="100%"
+>
+  <ComposedChart
+    barCategoryGap="10%"
+    barGap={4}
+    data={Array []}
+    layout="horizontal"
+    margin={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "right": 30,
+        "top": 10,
+      }
+    }
+    reverseStackOrder={false}
+    stackOffset="none"
+  >
+    <XAxis
+      allowDataOverflow={false}
+      allowDecimals={true}
+      allowDuplicatedCategory={true}
+      dataKey="name"
+      domain={
+        Array [
+          0,
+          "auto",
+        ]
+      }
+      height={30}
+      hide={false}
+      mirror={false}
+      orientation="bottom"
+      padding={
+        Object {
+          "left": 0,
+          "right": 0,
+        }
+      }
+      reversed={false}
+      scale="auto"
+      tickCount={5}
+      type="category"
+      width={0}
+      xAxisId={0}
+    />
+    <YAxis
+      allowDataOverflow={false}
+      allowDecimals={true}
+      allowDuplicatedCategory={true}
+      domain={
+        Array [
+          0,
+          "auto",
+        ]
+      }
+      height={0}
+      hide={false}
+      mirror={false}
+      orientation="left"
+      padding={
+        Object {
+          "bottom": 0,
+          "top": 0,
+        }
+      }
+      reversed={false}
+      scale="auto"
+      tickCount={5}
+      type="number"
+      width={60}
+      yAxisId={0}
+    />
+    <Tooltip
+      active={false}
+      animationDuration={400}
+      animationEasing="ease"
+      contentStyle={Object {}}
+      coordinate={
+        Object {
+          "x": 0,
+          "y": 0,
+        }
+      }
+      cursor={true}
+      cursorStyle={Object {}}
+      filterNull={true}
+      isAnimationActive={true}
+      itemSorter={[Function]}
+      itemStyle={Object {}}
+      labelStyle={Object {}}
+      offset={10}
+      separator=" : "
+      useTranslate3d={false}
+      viewBox={
+        Object {
+          "x1": 0,
+          "x2": 0,
+          "y1": 0,
+          "y2": 0,
+        }
+      }
+      wrapperStyle={Object {}}
+    />
+    <Legend
+      align="center"
+      iconSize={14}
+      layout="horizontal"
+      verticalAlign="bottom"
+    />
+    <CartesianGrid
+      fill="none"
+      horizontal={true}
+      horizontalFill={Array []}
+      horizontalPoints={Array []}
+      stroke="#f5f5f5"
+      vertical={true}
+      verticalFill={Array []}
+      verticalPoints={Array []}
+    />
+    <Legend
+      align="center"
+      height={36}
+      iconSize={14}
+      layout="horizontal"
+      verticalAlign="bottom"
+    />
+    <Area
+      activeDot={true}
+      animationBegin={0}
+      animationDuration={1500}
+      animationEasing="ease"
+      connectNulls={false}
+      dataKey="expenses"
+      dot={false}
+      fill="#8884d8"
+      fillOpacity={0.6}
+      hide={false}
+      isAnimationActive={true}
+      legendType="line"
+      points={Array []}
+      stroke="#8884d8"
+      type="monotone"
+      xAxisId={0}
+      yAxisId={0}
+    />
+    <Bar
+      animationBegin={0}
+      animationDuration={400}
+      animationEasing="ease"
+      barSize={20}
+      data={Array []}
+      dataKey="savings"
+      fill="#413ea0"
+      hide={false}
+      isAnimationActive={true}
+      layout="vertical"
+      legendType="rect"
+      minPointSize={0}
+      onAnimationEnd={[Function]}
+      onAnimationStart={[Function]}
+      xAxisId={0}
+      yAxisId={0}
+    />
+    <Line
+      activeDot={true}
+      animateNewValues={true}
+      animationBegin={0}
+      animationDuration={1500}
+      animationEasing="ease"
+      connectNulls={false}
+      dataKey="incomes"
+      dot={true}
+      fill="#fff"
+      hide={false}
+      isAnimationActive={true}
+      legendType="line"
+      onAnimationEnd={[Function]}
+      onAnimationStart={[Function]}
+      points={Array []}
+      stroke="#ff7300"
+      strokeWidth={1}
+      type="monotone"
+      xAxisId={0}
+      yAxisId={0}
+    />
+  </ComposedChart>
+</ResponsiveContainer>
+`;

@@ -23,8 +23,8 @@ class DashboardPage extends Component {
         </div>
 
         <div className="row">
-          <div className="col-12 boxdash">
-            <ListFilters />
+          <div className="col-12 boxdash" align="center">
+            <ListFilters isDashboard={true} />
             <hr />
             <TransSumary type={"expense"} />
             <TransSumary type={"income"} />
