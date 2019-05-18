@@ -1,4 +1,4 @@
-Online version: https://central-budget.herokuapp.com
+Live at: https://central-budget.herokuapp.com
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
